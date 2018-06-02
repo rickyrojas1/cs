@@ -8,7 +8,17 @@
   text-align: center;
 }
 
-.App-logo {}
+.copyright {
+  text-align: center;
+  color: white;
+}
+
+.footer-logo {
+  height: 150px;
+  width: 260px;
+  margin-top: -64px;
+  justify-self: center;
+}
 
 .top-header {
   height: 60px;
@@ -18,17 +28,92 @@
   width: 100%;
 }
 
-.logo {
-  height: 80px;
-  width: 200px;
-  margin-top: -10px;
-  margin-left: 3vw;
-  justify-self: flex-start;
+.news-container {
+  height: 600px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
-.App-title {}
+.box1 {
+  height: 100%;
+  width: 85%;
+  background: aqua;
+  justify-self: flex-end;
+  align-self: flex-end;
+  grid-column: span 2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+}
 
-.App-intro {}
+.box2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-self: flex-end;
+  background: aqua;
+}
+
+.box2>img {
+  object-fit: fill;
+}
+
+.box3 {
+  height: 100%;
+  width: 70%;
+  background: aqua;
+  align-self: flex-end;
+}
+
+.box4 {
+  height: 100%;
+  width: 70%;
+  justify-self: flex-end;
+  background: aqua;
+}
+
+.box5 {
+  height: 100%;
+  width: 100%;
+  background: aqua;
+}
+
+.box6 {
+  height: 100%;
+  width: 85%;
+  background: aqua;
+  grid-column: span 2;
+}
+
+#footer {
+  height: 200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  justify-items: center;
+  align-items: center;
+  background: #373A43;
+  margin-top: 100px;
+}
+
+#footer>div>h4 {}
+
+#data-pulled {
+  color: white;
+}
+
+#donations {
+  color: white;
+}
+
+.logo {
+  height: 150px;
+  width: 260px;
+  margin-top: -44px;
+  justify-self: center;
+}
 
 .img-responsive {
   height: 120px;
@@ -44,8 +129,9 @@
 
 .navMenu {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   width: 100%;
+  justify-items: center;
   height: inherit;
 }
 
@@ -157,8 +243,6 @@
   margin: auto;
 }
 
-.price {}
-
 .coinButton {
   display: inline-block;
   width: 200px;
@@ -217,6 +301,9 @@
   font-size: 12px;
   margin-bottom: 5px;
   padding-left: 10px;
+  -moz-box-shadow: inset 0 0 1px #000000;
+  -webkit-box-shadow: inset 0 0 1px #000000;
+  box-shadow: inset 0 0 1px #000000;
 }
 
 .searchBox>input:focus {
@@ -466,9 +553,12 @@
 
 .movements {
   margin: auto;
+  font-family: CirBlack;
+  text-align: center;
 }
 
-.movements>h5, h2 {
+.movements>h5,
+h2 {
   color: #373A43;
 }
 
@@ -606,6 +696,31 @@
 }
 
 @media (max-width: 810px) {
+  #footer {
+    grid-template-columns: 1fr;
+    height: 600px;
+  }
+  #footer>div {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
+    justify-items: center;
+  }
+  #footer-logo {
+    margin-top: 20px;
+    order: 1;
+  }
+  #donations {
+    margin-top: 20px;
+    order: 2;
+  }
+  #data-pulled {
+    order: 3;
+    margin-top: 20px;
+  }
+  #footer>footer-logo {
+    width: 60%;
+  }
   .searchStats {
     padding-top: 30px;
     padding-bottom: 30px;

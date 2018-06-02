@@ -46,8 +46,6 @@
   margin: 30px;
 }
 
-.card-block1>p {}
-
 .card-block1>p {
   color: white;
 }
@@ -107,6 +105,16 @@
   grid-template-columns: 1fr;
   margin-bottom: 120px;
   grid-column-gap: 5px;
+  width: 100%;
+}
+
+.exchangeTable {
+  width: inherit;
+}
+
+.exchangeContainer {
+  border: 15px solid purple;
+  width: 100%;
 }
 
 .tab-list {
@@ -230,13 +238,13 @@
 }
 
 .calc-body {
-  padding: 40px;
   display: flex;
 }
 
 .calc-body>h1 {
   color: white;
   margin-bottom: 15px;
+  justify-self: flex-start;
 }
 
 .calc-body>input {
@@ -247,6 +255,9 @@
   font-size: 22px;
   text-align: center;
   margin: auto;
+  -moz-box-shadow: inset 0 0 1px #000000;
+  -webkit-box-shadow: inset 0 0 1px #000000;
+  box-shadow: inset 0 0 1px #000000;
 }
 
 .calc-body>input:focus {
@@ -304,14 +315,14 @@
     background: #373A43;
   }
   .calc-body {
-    padding: 0;
+    padding: 0px;
     width: 90%;
   }
   .calc-body>h1 {
     font-size: 23px;
   }
   .calc-body>input {
-    width: 120px;
+    width: 90px;
     height: 30px;
   }
   .social-container {

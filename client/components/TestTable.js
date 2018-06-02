@@ -16,6 +16,7 @@ class TestTable extends Component {
 
     this.test = this.test.bind(this);
 
+
   }
 
   test(e) {
@@ -25,16 +26,15 @@ class TestTable extends Component {
 
   }
 
-  render() {
-    console.log('outter props :', this.props);
-    let coinList = this.props.coinList;
 
+  render() {
+
+    let coinList = this.props.coinList;
     let tname = 'Tanner';
     let list = this.props.coinList;
     let filtered = list.filter((val) => {
 
       if ((val.name.toLowerCase().includes(this.state.filterRule.toLowerCase())) || (val.symbol.toLowerCase().includes(this.state.filterRule.toLowerCase()))) {
-        console.log('val :', val);
         return val;
       }
     })
@@ -56,11 +56,17 @@ class TestTable extends Component {
         Cell: props => {
 
           let symbol = props.original.symbol;
+          let ImageUrl = props.original.ImageUrl;
+          let Original = props.original;
+
+
+
           let imgPath = "https://www.cryptocompare.com" + props.original.ImageUrl;
 
           const newTo = {
             pathname: "/coins/" + symbol,
-            param1: this.props.globalData
+            imageUrl: ImageUrl,
+            original: Original
           };
           return (<div className="tablePic">
             <img src={imgPath} className="img" />
@@ -196,13 +202,14 @@ class TestTable extends Component {
 
     ]
 
+
     if (columns) {
 
       let totalCap = numeral(this.props.globalData.total_market_cap_usd).format('$0,0');
       let dailyVolume = numeral(this.props.globalData.total_24h_volume_usd).format('$0,0');
       return (<div>
 
-        <ParticlePage globalData={this.props.globalData} winner={this.props.winner} loser={this.props.loser} />
+
 
 
         <div className="searchStats">

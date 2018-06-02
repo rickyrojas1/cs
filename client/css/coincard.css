@@ -4,8 +4,6 @@
   height: inherit;
 }
 
-.coincard1>div {}
-
 .left-container1 {
   display: grid;
   justify-items: flex-start;
@@ -29,12 +27,6 @@
   height: 100%;
   margin-right: 20px;
 }
-
-.coinName1 {}
-
-.coinName1>div {}
-
-.left-container1>div {}
 
 .middleLine1 {
   display: flex;

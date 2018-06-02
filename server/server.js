@@ -28,6 +28,7 @@ app.use(
         "https://ton.twimg.com"
       ],
       "img-src": [
+        csp.SELF,
         "data:",
         "https://www.cryptocompare.com",
         "http://localhost:8000",

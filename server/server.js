@@ -35,6 +35,7 @@ app.use(
         "https://pbs.twimg.com",
         "https://platform.twitter.com",
         "https://ton.twimg.com",
+        "http://45.55.49.216",
         "https://abs.twimg.com"
       ],
       "font-src": [

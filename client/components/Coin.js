@@ -273,38 +273,38 @@ class Coin extends React.Component {
                 <h1>Changes</h1>
               </div>
               <div className="percents left">
-                <h5>
+                <h3>
                   1h<FontAwesome
                     className={hourlycolor}
                     name={hourlyArrow}
                     size=".8x"
                   />
-                </h5>
+                </h3>
                 <h2 className={hourlycolor}>
                   {this.state.coinMarket.percent_change_1h + "%"}
                 </h2>
               </div>
               <div className="percents">
-                <h5>
+                <h3>
                   24h<FontAwesome
                     className={dailycolor}
                     name={dailyArrow}
                     size=".8x"
                   />
-                </h5>
+                </h3>
                 <h2 className={dailycolor}>
                   {this.state.coinMarket.percent_change_24h + "%"}
                 </h2>
               </div>
               <div className="percents">
-                <h5>
+                <h3>
                   7d
                   <FontAwesome
                     className={weeklycolor}
                     name={weeklyArrow}
                     size=".8x"
                   />
-                </h5>
+                </h3>
                 <h2 className={weeklycolor}>
                   {this.state.coinMarket.percent_change_7d + "%"}
                 </h2>
@@ -313,7 +313,7 @@ class Coin extends React.Component {
                 <h1>Daily Movement</h1>
               </div>
               <div className="movements">
-                <h5>Open</h5>
+                <h3>Open</h3>
                 <h4>
                   <FontAwesome
                     className="super-crazy-colors"
@@ -324,7 +324,7 @@ class Coin extends React.Component {
                 </h4>
               </div>
               <div className="movements">
-                <h5>Low Day</h5>
+                <h3>Low Day</h3>
                 <h4>
                   <FontAwesome
                     className="super-crazy-colors"
@@ -335,7 +335,7 @@ class Coin extends React.Component {
                 </h4>
               </div>
               <div className="movements">
-                <h5>High Day</h5>
+                <h3>High Day</h3>
                 <h4>
                   <FontAwesome
                     className="super-crazy-colors"

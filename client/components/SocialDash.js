@@ -116,6 +116,7 @@ class SocialDash extends React.Component {
           </div>
           <div className="twitterbox">
             <Timeline
+              className="twit"
               dataSource={{
                 sourceType: "profile",
                 screenName: twitterName

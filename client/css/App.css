@@ -562,6 +562,14 @@ h2 {
   color: #373A43;
 }
 
+.percents>h3 {
+  font-size: 20px;
+}
+
+.movements>h3 {
+  font-size: 20px;
+}
+
 .bio {
   display: flex;
   margin: auto;
@@ -692,6 +700,18 @@ h2 {
   .tradingview {
     grid-row: 1;
     width: 100%;
+  }
+  .movements>h4 {
+    font-size: 25px;
+  }
+  .top-header {
+    height: 90px;
+  }
+  .logo {
+    height: 180px;
+    width: 290px;
+    margin-top: -44px;
+    justify-self: center;
   }
 }
 

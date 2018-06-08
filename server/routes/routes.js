@@ -28,7 +28,6 @@ router.get("/*", function(req, res) {
 });
 
 router.route("/binance").post(function(req, res) {
-  console.log("this is pairing " + req.body.pairing);
   binanceRest
     .trades({
       symbol: req.body.pairing // Object is transformed into a query string, timestamp is automatically added
@@ -37,7 +36,7 @@ router.route("/binance").post(function(req, res) {
       res.send(data);
     })
     .catch(err => {
-      console.error("bi" + err);
+      console.error("ERROR:" + err);
     });
 });
 
@@ -48,32 +47,28 @@ router.route("/tickerPrice").post(function(req, res) {
       res.send(data);
     })
     .catch(err => {
-      console.error("tic" + err);
+      console.error("ERROR: " + err);
     });
 });
 
 router.route("/coinMarketCap").post(function(req, res) {
-  console.log("I was called");
   fetch("https://api.coinmarketcap.com/v1/ticker/?start=0&limit=10000")
     .then(response => response.json())
     .then(data => res.send(data));
 });
 
 router.route("/coinMarketCapFull").post(function(req, res) {
-  console.log("I was called");
   fetch("https://api.coinmarketcap.com/v1/global/")
     .then(response => response.json())
     .then(data => res.send(data));
 });
 
 router.route("/cryptoCompare").post(function(req, res) {
-  console.log("CryptoCompare Called");
   fetch("https://min-api.cryptocompare.com/data/all/coinlist")
     .then(response => response.json())
     .then(data => res.send(data));
 });
 router.route("/cryptoNews").post(function(req, res) {
-  console.log("CryptoCompare Called");
   fetch("https://min-api.cryptocompare.com/data/v2/news/?lang=EN")
     .then(response => response.json())
     .then(data => res.send(data));
@@ -114,16 +109,13 @@ router.route("/coinSnapFull").post(function(req, res) {
 
 router.route("/socialSnap").post(function(req, res) {
   let coinId = req.body.id;
-  console.log("coinid");
-  console.log(coinId);
+
   let coinPath =
     "https://www.cryptocompare.com/api/data/socialstats/?id=" + coinId;
 
   fetch(coinPath)
     .then(response => response.json())
     .then(data => {
-      console.log("sdfsdfvhsbdjvdfhjvbkdfjvbsdfjvdbjkhk");
-      console.log(data);
       res.send(data);
     });
 });
@@ -134,7 +126,7 @@ router.route("/update").post(function(req, res) {
     month: req.body.month,
     year: req.body.year
   };
-  console.log("doc" + doc);
+
   Expense.update(
     {
       _id: req.body._id

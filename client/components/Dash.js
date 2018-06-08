@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Route } from "react-router-dom";
 import TestTable from "./TestTable";
+import SearchPage from "./SearchPage";
 import News from "./News";
 import Coin from "./Coin";
 import App from "./App";
@@ -70,8 +71,6 @@ class Dash extends React.Component {
     let bSymbols = [];
     let filtered = [];
 
-    console.log("a :", a);
-    console.log("b :", b);
     Object.keys(b).forEach(key => {
       bSymbols[key] = b[key].ImageUrl;
       if (key == "IOT") {
@@ -86,8 +85,6 @@ class Dash extends React.Component {
       if (a[key].symbol in bSymbols) {
         a[key].ImageUrl = bSymbols[a[key].symbol];
         if (a[key].symbol == "MIOTA") {
-          console.log("a[key] :", a[key]);
-          console.log("object :", bSymbols[a[key].symbol]);
         }
 
         filtered.push(a[key]);
@@ -96,9 +93,7 @@ class Dash extends React.Component {
         count2++;
       }
     });
-    console.log("bSymbols :", bSymbols);
-    console.log("aSymbols :", aSymbols);
-    console.log("bSymbols :", filtered);
+
     return filtered;
   }
 
@@ -144,11 +139,12 @@ class Dash extends React.Component {
 
       return (
         <div>
-          <ParticlePage globalData={globalData} winner={winner} loser={loser} />
+          <SearchPage coinList={filteredSymbols} />
           <TestTable
             coinList={filteredSymbols}
             globalData={this.state.globalData}
           />
+
           <Footer />
         </div>
       );

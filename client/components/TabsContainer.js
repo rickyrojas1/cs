@@ -35,7 +35,6 @@ class TabsContainer extends React.Component {
         }
       })
       .then(function(response) {
-        console.log("TABSresponse :", response);
         e.setState({ social: response });
       });
   }
@@ -43,8 +42,6 @@ class TabsContainer extends React.Component {
   render() {
     if (this.props.info && this.state.social) {
       let res = this.props.info;
-      console.log("res :", res);
-      console.log("this :", this);
 
       if (res == "none") {
         return (
@@ -75,7 +72,7 @@ class TabsContainer extends React.Component {
                 <Tab className="tab">About</Tab>
                 <Tab className="tab">Social</Tab>
                 <Tab className="tab">Calculator</Tab>
-                <Tab className="tab">Exhcanges</Tab>
+                <Tab className="tab">Exchanges</Tab>
               </TabList>
 
               <TabPanel>
@@ -87,6 +84,7 @@ class TabsContainer extends React.Component {
                     pic={this.props.info.ImageUrl}
                     info={this.state.social}
                     websiteUrl={this.props.info.WebsiteUrl}
+                    width={this.props.width}
                   />
                 </div>
               </TabPanel>

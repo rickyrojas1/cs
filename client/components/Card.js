@@ -13,7 +13,6 @@ class Card extends Component {
   componentDidMount() {}
 
   render() {
-    console.log("card", this.props);
     let imgPath = "https://www.cryptocompare.com" + this.props.info.ImageUrl;
     return (
       <div className="card-container">
@@ -23,8 +22,8 @@ class Card extends Component {
             <img src={imgPath} className="img-about" />
           </div>
           <div className="bio">
-            {this.props.bio.map(current => {
-              return <p>{current}</p>;
+            {this.props.bio.map((current, i) => {
+              return <p key={i}>{current}</p>;
             })}
           </div>
           <div className="tech-info">

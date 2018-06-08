@@ -25,6 +25,7 @@
     "react-async-script": "^0.9.1",
     "react-autosuggest": "^9.3.4",
     "react-bootstrap": "^0.32.1",
+    "react-burger-menu": "^2.5.0",
     "react-dom": "^16.4.0",
     "react-dropdown-input": "^0.1.11",
     "react-fontawesome": "^1.6.1",

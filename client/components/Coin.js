@@ -126,17 +126,14 @@ class Coin extends React.Component {
         }
       })
       .then(function(response) {
-        console.log("e.props :", e.props);
         let sym = e.props.match.params.coinSymbol;
 
         if (sym == "MIOTA") sym = "IOT";
-        console.log("response :", response);
+
         let asset = response.data.Data[sym];
-        console.log("asset :", asset);
 
         e.setState({ symbol: sym });
         e.setState({ info: asset });
-        console.log("e.state.info :", e.state.info);
       });
   }
 
@@ -184,7 +181,6 @@ class Coin extends React.Component {
   }
 
   render() {
-    console.log("this :", this);
     let hourlycolor = "red";
     let weeklycolor = "red";
     let dailycolor = "red";
@@ -224,10 +220,8 @@ class Coin extends React.Component {
       if (sym == "IOT") sym = "IOTA";
       if (sym == "NANO") propperExchange = "Binance";
       if (sym == "MAID") propperExchange = "Poloniex";
-      console.log("sym :", sym);
-      let widgetId = propperExchange + ":" + sym + "BTC";
 
-      console.log("widgetId :", widgetId);
+      let widgetId = propperExchange + ":" + sym + "BTC";
 
       if (this.state.symbol == "BTC") {
         widgetId = "Coinbase:" + this.state.symbol + "USD";
@@ -274,11 +268,7 @@ class Coin extends React.Component {
               </div>
               <div className="percents left">
                 <h3>
-                  1h<FontAwesome
-                    className={hourlycolor}
-                    name={hourlyArrow}
-                    size=".8x"
-                  />
+                  1h<FontAwesome className={hourlycolor} name={hourlyArrow} />
                 </h3>
                 <h2 className={hourlycolor}>
                   {this.state.coinMarket.percent_change_1h + "%"}
@@ -286,11 +276,7 @@ class Coin extends React.Component {
               </div>
               <div className="percents">
                 <h3>
-                  24h<FontAwesome
-                    className={dailycolor}
-                    name={dailyArrow}
-                    size=".8x"
-                  />
+                  24h<FontAwesome className={dailycolor} name={dailyArrow} />
                 </h3>
                 <h2 className={dailycolor}>
                   {this.state.coinMarket.percent_change_24h + "%"}
@@ -299,11 +285,7 @@ class Coin extends React.Component {
               <div className="percents">
                 <h3>
                   7d
-                  <FontAwesome
-                    className={weeklycolor}
-                    name={weeklyArrow}
-                    size=".8x"
-                  />
+                  <FontAwesome className={weeklycolor} name={weeklyArrow} />
                 </h3>
                 <h2 className={weeklycolor}>
                   {this.state.coinMarket.percent_change_7d + "%"}
@@ -315,33 +297,21 @@ class Coin extends React.Component {
               <div className="movements">
                 <h3>Open</h3>
                 <h4>
-                  <FontAwesome
-                    className="super-crazy-colors"
-                    name="btc"
-                    size="md"
-                  />
+                  <FontAwesome className="super-crazy-colors" name="btc" />
                   {scientificToDecimal(this.state.coinCompare.OPENDAY)}
                 </h4>
               </div>
               <div className="movements">
                 <h3>Low Day</h3>
                 <h4>
-                  <FontAwesome
-                    className="super-crazy-colors"
-                    name="btc"
-                    size="md"
-                  />
+                  <FontAwesome className="super-crazy-colors" name="btc" />
                   {scientificToDecimal(this.state.coinCompare.LOWDAY)}
                 </h4>
               </div>
               <div className="movements">
                 <h3>High Day</h3>
                 <h4>
-                  <FontAwesome
-                    className="super-crazy-colors"
-                    name="btc"
-                    size="md"
-                  />
+                  <FontAwesome className="super-crazy-colors" name="btc" />
                   {scientificToDecimal(this.state.coinCompare.HIGHDAY)}
                 </h4>
               </div>
@@ -353,6 +323,7 @@ class Coin extends React.Component {
                   height={windowWidth > 400 ? "600" : "300"}
                   width="100%"
                   theme="dark"
+                  hide_side_toolbar="false"
                 />
               </div>
             ) : (
@@ -361,7 +332,7 @@ class Coin extends React.Component {
           </div>
 
           <div className="break2" />
-          <div className="break3">{console.log("this :", this)}</div>
+          <div className="break3" />
           <TabsContainer
             className="exchangeTable"
             info={this.state.general}

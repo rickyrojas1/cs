@@ -28,8 +28,6 @@ class SocialDash extends React.Component {
     let github = this.props.info.data.Data.CodeRepository.List;
     let reddit = this.props.info.data.Data.Reddit.link;
     let facebook = this.props.info.data.Data.Facebook.link;
-    console.log("redfb", reddit, facebook, github);
-    console.log("twitter", twitter);
 
     github
       ? this.setState({ github: github })
@@ -52,22 +50,14 @@ class SocialDash extends React.Component {
       this.setState({ twitter: "none" });
     }
   }
-  onLoad() {
-    console.log("script loaded");
-  }
+  onLoad() {}
   render() {
-    console.log("this.props.info: social");
-    console.log(this.props.info);
-
-    console.log("this.props.general: social");
-    console.log(this.props.general);
     let imgPath = "https://www.cryptocompare.com" + this.props.pic;
     let twitterName = this.state.twitterId;
-    console.log("twitterSHIIIII");
-    console.log(twitterName);
-    console.log("isQual", twitterName === "");
-    console.log("this.state.twitt", this.state.twitterId);
+
     if (this.state.twitterId) {
+      let windowWidth = this.props.width < 1003 ? "750" : "550";
+
       return (
         <div className="social-container">
           <div className="social-grid">
@@ -82,7 +72,6 @@ class SocialDash extends React.Component {
                 Website
               </a>
               <div className="icons">
-                {console.log(this.state.reddit)}
                 {this.state.github[0] ? (
                   <a target="_blank" href={this.state.github[0].url}>
                     <img src="../img/git.png" className="icon" />
@@ -123,7 +112,7 @@ class SocialDash extends React.Component {
               }}
               options={{
                 username: twitterName,
-                height: "550"
+                height: windowWidth
               }}
               onLoad={() => console.log("Timeline is loaded!")}
             />
@@ -144,5 +133,6 @@ export default SocialDash;
 SocialDash.defaultProps = {
   info: "",
   websiteUrl: "#",
-  pic: ""
+  pic: "",
+  width: ""
 };

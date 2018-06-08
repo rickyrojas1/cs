@@ -18,14 +18,11 @@ class Calculator extends React.Component {
   componentDidMount() {}
 
   calculate(value) {
-    console.log("value", value);
-
     let val = this.refs.coinNum.value;
     let answer = parseFloat(val) * parseFloat(this.props.coin.price_usd);
     this.setState({ price: answer });
   }
   render() {
-    console.log("this.props :", this.props);
     let backUpImage = "";
     let imgPath = "https://www.cryptocompare.com" + this.props.info.ImageUrl;
     if (this.props.image) {

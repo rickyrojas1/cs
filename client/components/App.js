@@ -17,6 +17,10 @@ const App = () => {
         <Link to="/">
           <img src="./img/cs2.png" alt="coinStalker" className="logo" />
         </Link>
+
+        <Link to="/" className="menu2" style={{ textDecoration: "none" }}>
+          Home
+        </Link>
       </nav>
 
       <Route

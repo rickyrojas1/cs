@@ -33,6 +33,7 @@ app.use(
         "data:",
         "https://www.cryptocompare.com",
         "https://images.cryptocompare.com",
+        "https://images.cryptocompare.com/news",
         "http://localhost:8000",
         "https://syndication.twitter.com",
         "https://pbs.twimg.com",

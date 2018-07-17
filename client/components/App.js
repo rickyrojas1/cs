@@ -14,13 +14,29 @@ const App = () => {
   return (
     <div className="top-header">
       <nav className="navMenu">
+        {window.location.hash === "#/"
+          ? console.log("home page")
+          : console.log("not home page")}
         <Link to="/">
           <img src="./img/cs2.png" alt="coinStalker" className="logo" />
         </Link>
 
-        <Link to="/" className="menu2" style={{ textDecoration: "none" }}>
-          Home
-        </Link>
+        <div className="menu2">
+          <Link
+            to="/"
+            className="header-link"
+            style={{ textDecoration: "none" }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/news"
+            className="header-link"
+            style={{ textDecoration: "none" }}
+          >
+            News
+          </Link>
+        </div>
       </nav>
 
       <Route

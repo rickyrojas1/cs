@@ -25,12 +25,14 @@ app.use(
         csp.INLINE,
         "https://maxcdn.bootstrapcdn.com",
         "https://platform.twitter.com",
+        "https://fonts.googleapis.com",
         "https://ton.twimg.com"
       ],
       "img-src": [
         csp.SELF,
         "data:",
         "https://www.cryptocompare.com",
+        "https://images.cryptocompare.com",
         "http://localhost:8000",
         "https://syndication.twitter.com",
         "https://pbs.twimg.com",

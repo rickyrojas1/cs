@@ -194,6 +194,10 @@ class Coin extends React.Component {
       this.state.info &&
       this.state.general
     ) {
+      console.log(
+        "this.state.general.Description :",
+        this.state.general.Description
+      );
       var el = document.createElement("div");
       el.innerHTML = this.state.general.Description;
 
@@ -209,7 +213,7 @@ class Coin extends React.Component {
       });
 
       let windowWidth = this.state.width;
-
+      console.log("realBio :", realBio);
       let propperExchange = this.findExchange(
         tradingViewExchanges,
         this.state.exchanges
@@ -256,7 +260,7 @@ class Coin extends React.Component {
             <CoinCard info={this.state.info} coin={this.state.coinMarket} />
           </div>
           <div className={propperExchange ? "hidden" : "nocharts"}>
-            <p>No Charts Avaliable</p>
+            <p>No Charts Available</p>
           </div>
           <div className="break1" />
           <div

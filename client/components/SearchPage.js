@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AutoSuggest from "./AutoSuggest";
+import SemanticSearch from "./SemanticSearch";
 var FontAwesome = require("react-fontawesome");
 
 class SearchPage extends Component {
@@ -20,6 +21,7 @@ class SearchPage extends Component {
 
   render() {
     let list = this.props.coinList;
+
     let filtered = list.filter(val => {
       if (
         val.name.toLowerCase().slice(0, this.state.filterRule.length) ==
@@ -30,7 +32,7 @@ class SearchPage extends Component {
         return val;
       }
     });
-
+    console.log("filtered :", filtered);
     return (
       <div className="search-container">
         <div className="main-container">
@@ -43,6 +45,7 @@ class SearchPage extends Component {
           ref="myValue"
           onInput={e => this.test(e)}
         />
+
         <span>
           <FontAwesome className="search-icon" name="search" size="2x" />
         </span>

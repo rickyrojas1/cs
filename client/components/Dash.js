@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 import { Route } from "react-router-dom";
 import TestTable from "./TestTable";
 import SearchPage from "./SearchPage";
+import Typehead from "./Typehead";
 import News from "./News";
+
 import Coin from "./Coin";
 import App from "./App";
 import Particles from "react-particles-js";
 import ParticlePage from "./ParticlePage.js";
 import Footer from "./Footer.js";
 import "../css/loader.css";
+import AutoFill from "./AutoFill";
 
 var querystring = require("querystring");
 
